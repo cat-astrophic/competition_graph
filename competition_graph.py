@@ -40,13 +40,15 @@ def competition_graph(MAT, k=1):
         
         for i in range(len(MAT)):
             
-            for j in range(len(MAT)):
+            for j in range(i+1,len(MAT)):
                 
                 for k in range(len(MAT)):
                     
                     if (MAT[i][k] != 0) and (MAT[j][k] != 0):
                         
                         A[i][j] = 1
+                        
+        A = A + np.transpose(A)
                         
         return A
 
